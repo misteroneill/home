@@ -1,0 +1,20 @@
+[user]
+    name = Patrick O'Neill
+    email = pgoneill@gmail.com
+
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+
+[alias]
+    br = branch
+    ci = commit
+    co = checkout
+    st = status
+
+[push]
+    default = current
