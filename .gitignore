@@ -1,8 +1,9 @@
 .AB64CF89
+.account
+.bash_history
 .CF89AA64
 .CFUserTextEncoding
 .DS_Store
-.bash_history
 .lesshst
 .mysql_history
 .pgpass
