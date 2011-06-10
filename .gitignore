@@ -11,6 +11,7 @@
 .rnd
 .sqlite_history
 .viminfo
+.vim/.netrwhist
 *.swp
 
 .DownloadManager/
