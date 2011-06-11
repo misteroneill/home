@@ -11,9 +11,14 @@ alias ping='ping -c 5'
 alias grepgit='grep -r --exclude-dir="\.git"'
 alias grepsvn='grep -r --exclude-dir="\.svn"'
 
-# Show/hide hidden files in Finder
+alias sgi='sudo gem install'
+alias aps='aptitude search'
+alias api='sudo aptitude install'
+
+# Python/Django
+alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
+
+# Mac OS X
 alias hiddenshow='defaults write com.apple.finder AppleShowAllFiles -bool true; KillAll Finder;'
 alias hiddenhide='defaults write com.apple.finder AppleShowAllFiles -bool false; KillAll Finder;'
-
-# Hack Changes to avoid trial.
 alias changes='rm ~/Library/Application\ Support/Changes/.cacheSettings2'

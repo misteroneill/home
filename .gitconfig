@@ -1,7 +1,6 @@
 [user]
 	name = Patrick O'Neill
 	email = pgoneill@gmail.com
-
 [color]
 	diff = auto
 	status = auto
@@ -9,7 +8,6 @@
 	interactive = auto
 	ui = true
 	pager = true
-
 [alias]
 	br = branch
 	ci = commit
@@ -18,6 +16,5 @@
 	a = add
 	ps = push
 	pl = pull
-
 [push]
 	default = current

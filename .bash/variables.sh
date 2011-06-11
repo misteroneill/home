@@ -12,5 +12,10 @@ export GIT_EDITOR='vim'
 
 export GREP_OPTIONS="--color=auto -nI" # Highlight search term, show line numbers, ignore binaries.
 
+# For Python virtualenv/virtualenvwrapper
+export WORKON_HOME=$HOME/.virtualenvs
+export PIP_VIRTUALENV_BASE=$WORKON_HOME
+
+# Mac OS X
 export CLICOLOR=1
 export LSCOLORS=gxfxcxdxbxegedabagacad
