@@ -11,10 +11,6 @@ alias ping='ping -c 5'
 alias grepgit='grep -r --exclude-dir="\.git"'
 alias grepsvn='grep -r --exclude-dir="\.svn"'
 
-alias sgi='sudo gem install'
-alias aps='aptitude search'
-alias api='sudo aptitude install'
-
 # Python/Django
 alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
 
