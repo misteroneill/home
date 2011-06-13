@@ -18,3 +18,5 @@
 	pl = pull
 [push]
 	default = current
+[core]
+	excludesfile = /Users/pgoneill/.gitignore_global
