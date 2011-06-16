@@ -10,7 +10,6 @@ set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
 
 set background=dark
 syntax on
-"colorscheme elflord   " use this color scheme
 
 if has("gui_running")
     set guifont=Consolas:h12
