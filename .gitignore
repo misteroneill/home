@@ -3,6 +3,7 @@
 .bash_history
 .bash_logout
 .bashrc.orig
+.bash/local.sh
 .CF89AA64
 .CFUserTextEncoding
 .dmrc
@@ -28,6 +29,7 @@ examples.desktop
 
 *.swp
 
+.adobe/
 .aptitude/
 .cache/
 .config/
