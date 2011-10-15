@@ -8,6 +8,12 @@ set ignorecase      " ignore case when searching
 set nowrap          " stop lines from wrapping
 set wildignore=*.o,*.obj,*.bak,*.exe,*.pyc,*.DS_Store,*.db
 
+" indent 4 spaces
+set smartindent
+set tabstop=4
+set shiftwidth=4
+set expandtab
+
 set background=dark
 syntax on
 
