@@ -17,6 +17,8 @@ if [ $HOST_TYPE = "mac" ]; then
     PATH=/opt/local/apache2/bin:$PATH
     export PATH
     export MANPATH=/opt/local/share/man:$MANPATH
+else
+    export PATH=/var/lib/gems/1.8/bin:$PATH
 fi
 
 # Editors
