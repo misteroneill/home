@@ -15,8 +15,10 @@ if [ $HOST_TYPE = "mac" ]; then
     PATH=/opt/local/bin:$PATH
     PATH=/opt/local/lib/mysql5/bin:$PATH
     PATH=/opt/local/apache2/bin:$PATH
+    PATH=/opt/node/bin:$PATH
     export PATH
     export MANPATH=/opt/local/share/man:$MANPATH
+    export NODE_PATH=/opt/node:/opt/node/lib/node_modules
 else
     export PATH=/var/lib/gems/1.8/bin:$PATH
 fi

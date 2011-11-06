@@ -48,6 +48,7 @@ examples.desktop
 .m2/
 .macports/
 .mozilla/
+.npm/
 .pip/
 .pulse/
 .python-eggs/
