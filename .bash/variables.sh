@@ -15,8 +15,10 @@ if [ $HOST_TYPE = "mac" ]; then
     PATH=/opt/local/bin:$PATH
     PATH=/opt/local/lib/mysql5/bin:$PATH
     PATH=/opt/local/apache2/bin:$PATH
+    PATH=/usr/local/node/bin:$PATH
     export PATH
     export MANPATH=/opt/local/share/man:$MANPATH
+    export NODE_PATH=/usr/local/node:/usr/local/node/lib/node_modules
 fi
 
 # Editors
@@ -24,8 +26,8 @@ export EDITOR='vim'
 export SVN_EDITOR='vim'
 export GIT_EDITOR='vim'
 
-# Highlight search term, show line numbers, ignore binaries.
-export GREP_OPTIONS="--color=auto -nI"
+# Highlight search term, ignore binaries.
+export GREP_OPTIONS="--color=auto -I"
 
 # For Python virtualenv/virtualenvwrapper
 export WORKON_HOME=$HOME/.virtualenvs
