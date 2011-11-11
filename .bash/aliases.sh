@@ -20,8 +20,8 @@ alias la='ls -AF'    # Compact view, show hidden
 alias ll='ls -lFh'   # Long view, no hidden
 
 alias ping='ping -c 5'
-alias grepgit='grep -r --exclude-dir="\.git"'
-alias grepsvn='grep -r --exclude-dir="\.svn"'
+alias grepgit='grep -r --exclude="\.git"'
+alias grepsvn='grep -r --exclude="\.svn"'
 
 # Python/Django
 alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
