@@ -9,16 +9,10 @@ case $uname_str in
         ;;
 esac
 
-# Path/manpath
 if [ $HOST_TYPE = "mac" ]; then
-    PATH=/opt/local/sbin:$PATH
-    PATH=/opt/local/bin:$PATH
-    PATH=/opt/local/lib/mysql5/bin:$PATH
-    PATH=/opt/local/apache2/bin:$PATH
+    PATH=/usr/local/mysql/bin:$PATH
     PATH=/usr/local/node/bin:$PATH
-    PATH=/opt/node/bin:$PATH
     export PATH
-    export MANPATH=/opt/local/share/man:$MANPATH
     export NODE_PATH=/usr/local/node:/usr/local/node/lib/node_modules:/opt/node:/opt/node/lib/node_modules
 else
     export PATH=/var/lib/gems/1.8/bin:$PATH

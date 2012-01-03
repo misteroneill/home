@@ -29,5 +29,5 @@ alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "eg
 if [ $HOST_TYPE = "mac" ]; then
     alias hiddenshow='defaults write com.apple.finder AppleShowAllFiles -bool true; KillAll Finder;'
     alias hiddenhide='defaults write com.apple.finder AppleShowAllFiles -bool false; KillAll Finder;'
-    alias changes='rm ~/Library/Application\ Support/Changes/.cacheSettings2'
 fi
+
