@@ -12,7 +12,7 @@ if [ $HOST_TYPE = "mac" ]; then
     export PATH=/usr/local/mysql/bin:$PATH
     export NODE_PATH=/usr/local/lib/node_modules
 else
-    export PATH=/var/lib/gems/1.8/bin:$PATH
+    export PATH=~/.gem/ruby/31.8/bin:$PATH
 fi
 
 # Editors
