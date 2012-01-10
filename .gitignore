@@ -8,6 +8,7 @@
 .CFUserTextEncoding
 .dmrc
 .DS_Store
+.emacs
 .esd_auth
 .gksu.lock
 .gtk-bookmarks
@@ -18,6 +19,7 @@
 .pgpass
 .php_history
 .profile
+.psql_history
 .pulse-cookie
 .rnd
 .sqlite_history
@@ -26,8 +28,8 @@
 .vim/.netrwhist
 .xsession-errors
 .xsession-errors.old
-examples.desktop
-
+.zshrc
+*.desktop
 *.swp
 
 .adobe/
@@ -59,7 +61,6 @@ examples.desktop
 .virtualenvs/
 
 Desktop/
-dev/
 Documents/
 Downloads/
 Dropbox/
@@ -70,3 +71,11 @@ Pictures/
 Public/
 Sites/
 VirtualBox VMs/
+
+bin/
+dev/
+git/
+lib/
+libexec/
+share/
+webapps/
