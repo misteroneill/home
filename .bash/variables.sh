@@ -1,19 +1,16 @@
-uname_str=`uname`
-case $uname_str in 
+case `uname` in 
     Darwin)
         export HOST_TYPE='mac'
-        ;;
+		;;
     *)
-        # Just assume Linux if not Mac...
         export HOST_TYPE='linux'
-        ;;
+		;;
 esac
 
+# Paths
 if [ $HOST_TYPE = "mac" ]; then
-    PATH=/usr/local/mysql/bin:$PATH
-    PATH=/usr/local/node/bin:$PATH
-    export PATH
-    export NODE_PATH=/usr/local/node:/usr/local/node/lib/node_modules:/opt/node:/opt/node/lib/node_modules
+    export PATH=/usr/local/mysql/bin:$PATH
+    export NODE_PATH=/usr/local/lib/node_modules
 else
     export PATH=/var/lib/gems/1.8/bin:$PATH
 fi
