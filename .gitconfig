@@ -20,3 +20,6 @@
 	default = current
 [core]
 	excludesfile = /Users/pgoneill/.gitignore_global
+[branch]
+	autosetuprebase = always
+	autosetupmerge = always

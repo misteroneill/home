@@ -51,6 +51,7 @@
 .m2/
 .macports/
 .mozilla/
+.netbeans/
 .npm/
 .pip/
 .pulse/
