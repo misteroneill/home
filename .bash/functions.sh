@@ -6,10 +6,10 @@ parse_svn_rev(){
     svn info 2> /dev/null | grep "Revision" | sed 's/Revision: \(.*\)/[r\1] /';
 }
 
-svn-diff(){
+svndiff(){
     svn diff "${@}" | colordiff
 }
 
-subl-proj(){
-    subl --project ~/Documents/"${@}".sublime-project
+sublproj(){
+    subl --project ~/Dropbox/Sublime\ Projects/"${@}".sublime-project
 }
