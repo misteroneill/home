@@ -17,12 +17,5 @@ set expandtab
 set background=dark
 syntax on
 
-if has("gui_running")
-    set guifont=Consolas:h12
-    set lines=50
-    set columns=120
-    colorscheme darkspectrum
-else
-    set t_Co=256
-    colorscheme xoria256 
-endif
+set t_Co=256
+colorscheme xoria256 

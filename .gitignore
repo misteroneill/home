@@ -1,66 +1,27 @@
-.AB64CF89
-.account
-.bash_history
-.bash_logout
-.bashrc.orig
-.bash/local.sh
+# Capitalized filenames.
 .CF89AA64
 .CFUserTextEncoding
-.dmrc
 .DS_Store
+
+# Lower-case filenames.
+.bash_history
+.bash_logout
+.bash_profile
+.bash/*_local.sh
 .emacs
-.esd_auth
-.gksu.lock
-.gtk-bookmarks
-.ICEauthority
-.lesshst
 .mysql_history
 .pearrc
-.pgpass
 .php_history
-.profile
-.psql_history
-.pulse-cookie
-.rnd
 .sqlite_history
-.sudo_as_admin_successful
 .viminfo
 .vim/.netrwhist
-.xsession-errors
-.xsession-errors.old
-.zshrc
+
+# File extensions.
 *.desktop
 *.swp
 
-.adobe/
-.aptitude/
-.cache/
-.config/
-.cups/
-.dbus/
-.DownloadManager/
-.dropbox/
-.fontconfig/
-.gconf/
-.gconfd/
-.gem/
-.gnome2/
-.idlerc/
-.keepassx/
-.local/
-.m2/
-.macports/
-.mozilla/
-.netbeans/
-.npm/
-.pip/
-.pulse/
-.python-eggs/
-.ssh/
-.subversion/
+# Capitalized directories.
 .Trash/
-.virtualenvs/
-
 Desktop/
 Documents/
 Downloads/
@@ -73,8 +34,19 @@ Public/
 Sites/
 VirtualBox VMs/
 
+# Lower-case directories.
+.cups/
+.dropbox/
+.gem/
+.keepassx/
+.netbeans/
+.npm/
+.pip/
+.python-eggs/
+.ssh/
+.subversion/
+.virtualenvs/
 bin/
-dev/
 git/
 lib/
 libexec/

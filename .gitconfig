@@ -9,14 +9,7 @@
     ui = true
     pager = true
 [alias]
-    br = branch
-    ci = commit
-    co = checkout
-    st = status
-    a = add
-    ps = push
-    pl = pull
-    freebase = rebase
+    top = rev-parse --show-toplevel
 [core]
     excludesfile = ~/.gitignore_global
 [branch]
