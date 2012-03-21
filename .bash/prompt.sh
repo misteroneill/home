@@ -16,4 +16,4 @@ BROWN="\[\033[0;33m\]"
 BOLD_BROWN="\[\033[1;33m\]"
 DEFAULT_COLOR="\[\033[00m\]"
 
-export PS1="$BOLD_BROWN\t $BOLD_GREEN\u@\h $BOLD_PURPLE\W $BOLD_BLUE\$(parse_git_branch)\$(parse_svn_rev)$DEFAULT_COLOR$ "
+export PS1="$BROWN\t $GREEN\u@\h $PURPLE\W $BLUE\$(parse_git_branch)\$(parse_svn_rev)$DEFAULT_COLOR$ "
