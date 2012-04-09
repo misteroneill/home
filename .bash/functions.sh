@@ -9,7 +9,3 @@ parse_svn_rev(){
 svndiff(){
     svn diff "${@}" | colordiff
 }
-
-sublproj(){
-    subl --project ~/Dropbox/Sublime\ Projects/"${@}".sublime-project
-}
