@@ -8,6 +8,7 @@
 .ICEauthority
 .Trash/
 .Xauthority
+.aptitude/
 .bash_history
 .bash_logout
 .bash_profile
@@ -27,8 +28,10 @@
 .gem/
 .gksu.lock
 .gnome2/
+.gstreamer-0.10/
 .gtk-bookmarks
 .keepassx/
+.macromedia/
 .mission-control/
 .mozilla/
 .mysql_history
@@ -63,6 +66,7 @@ Music/
 Pictures/
 Public/
 Sites/
+Ubuntu One/
 VirtualBox VMs/
 bin/
 git/
