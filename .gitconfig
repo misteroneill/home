@@ -8,17 +8,6 @@
     interactive = auto
     ui = true
     pager = true
-[alias]
-    br = branch
-    st = status
-    co = checkout
-    ci = commit
-    ft = fetch
-    rb = rebase
-    cl = clone
-    a  = add
-    ps = push
-    pl = pull
 [core]
     excludesfile = ~/.gitignore_global
 [branch]
