@@ -15,3 +15,11 @@
 	autosetupmerge = false
 [push]
 	default = upstream
+[alias]
+	co = checkout
+	st = status
+	rb = rebase
+	br = branch
+	cm = commit
+	ft = fetch
+	ci = commit
