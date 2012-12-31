@@ -14,7 +14,7 @@
 	autosetuprebase = always
 	autosetupmerge = false
 [push]
-	default = upstream
+	default = tracking
 [alias]
 	co = checkout
 	st = status
