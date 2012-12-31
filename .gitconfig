@@ -9,7 +9,7 @@
 	ui = true
 	pager = true
 [core]
-    excludesfile = ~/.gitignore_global
+	excludesfile = ~/.gitignore
 [branch]
 	autosetuprebase = always
 	autosetupmerge = false
