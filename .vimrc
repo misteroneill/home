@@ -1,5 +1,3 @@
-call pathogen#infect()
-
 set ls=2            " always show status line
 set hlsearch        " highlight searches
 set incsearch       " do incremental searching
