@@ -16,8 +16,8 @@ export GIT_EDITOR='vim'
 export GREP_OPTIONS="--color=auto -I"
 
 # For Python virtualenv/virtualenvwrapper
-export WORKON_HOME=$HOME/.virtualenvs
-export PIP_VIRTUALENV_BASE=$WORKON_HOME
+export WORKON_HOME="$HOME/.virtualenvs"
+export PIP_VIRTUALENV_BASE="$WORKON_HOME"
 
 # List colors
 if [ $HOST_TYPE = "mac" ]; then
