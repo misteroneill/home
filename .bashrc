@@ -13,12 +13,16 @@ if [ -f ~/.bash/functions_local.sh ]; then
     source ~/.bash/functions_local.sh
 fi
 
-if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-    source /usr/local/etc/bash_completion.d/git-completion.bash
-fi
+if [ -f /etc/bash_completion ]; then
+    source /etc/bash_completion
+else
+    if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
+        source /usr/local/etc/bash_completion.d/git-completion.bash
+    fi
 
-if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
-    source /usr/local/etc/bash_completion.d/git-prompt.sh
+    if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
+        source /usr/local/etc/bash_completion.d/git-prompt.sh
+    fi
 fi
 
 source ~/.bash/prompt.sh
