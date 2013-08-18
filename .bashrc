@@ -23,6 +23,10 @@ else
     if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
         source /usr/local/etc/bash_completion.d/git-prompt.sh
     fi
+
+    if [ -f /usr/local/etc/bash_completion.d/git-flow-completion.bash ]; then
+        source /usr/local/etc/bash_completion.d/git-flow-completion.bash
+    fi
 fi
 
 source ~/.bash/prompt.sh
