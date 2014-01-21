@@ -30,4 +30,4 @@ Thumbs.db
 
 # Editor/IDE files
 *.tmproj
-*.sublime-project
+*.sublime-*
