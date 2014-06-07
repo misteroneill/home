@@ -18,6 +18,11 @@ syntax on
 
 set t_Co=256
 colorscheme xoria256
+set guifont=Source\ Code\ Pro:h15
+
+if has("gui_running")
+    colorscheme oceanblack
+endif
 
 " Map Ctrl+<movement> to swap between windows
 map <c-j> <c-w>j
