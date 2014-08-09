@@ -1,0 +1,18 @@
+[user]
+    name = Pat O'Neill
+    email = pgoneill@gmail.com
+[color]
+    diff = auto
+    status = auto
+    branch = auto
+    interactive = auto
+    ui = true
+    pager = true
+[core]
+    excludesfile = ~/.gitignore_global
+    whitespace = trailing-space,space-before-tab
+[branch]
+    autosetuprebase = always
+    autosetupmerge = false
+[push]
+    default = upstream
