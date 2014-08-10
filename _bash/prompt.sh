@@ -1,21 +1,3 @@
-BLACK="\[\033[0;30m\]"
-BOLD_BLACK="\[\033[1;30m\]"
-WHITE="\[\033[0;37m\]"
-BOLD_WHITE="\[\033[1;37m\]"
-BLUE="\[\033[0;34m\]"
-BOLD_BLUE="\[\033[1;34m\]"
-GREEN="\[\033[0;32m\]"
-BOLD_GREEN="\[\033[1;32m\]"
-CYAN="\[\033[0;36m\]"
-BOLD_CYAN="\[\033[1;36m\]"
-RED="\[\033[0;31m\]"
-BOLD_RED="\[\033[1;31m\]"
-PURPLE="\[\033[0;35m\]"
-BOLD_PURPLE="\[\033[1;35m\]"
-BROWN="\[\033[0;33m\]"
-BOLD_BROWN="\[\033[1;33m\]"
-DEFAULT_COLOR="\[\033[00m\]"
-
 GIT_PS1_SHOWDIRTYSTATE=true
 
-export PS1="$GREEN\u@\h $PURPLE\W$CYAN\$(__git_ps1)\$(parse_svn_rev) $DEFAULT_COLOR$ "
+export PS1="$COLOR_GREEN\u@\h $COLOR_PURPLE\W$COLOR_CYAN\$(__git_ps1) $COLOR_DEFAULT$ "

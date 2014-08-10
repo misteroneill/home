@@ -18,8 +18,6 @@ alias ll='ls -lFh'       # Long view, no hidden
 
 alias ping='ping -c 5'
 alias greprg='grep -r --exclude="\.git"'
-
-# Python/Django
 alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
 
 if [ $HOST_TYPE = "mac" ]; then

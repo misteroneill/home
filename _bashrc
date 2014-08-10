@@ -1,39 +1,28 @@
-source ~/.bash/variables.sh
-if [ -f ~/.bash/variables_local.sh ]; then
-    source ~/.bash/variables_local.sh
-fi
+# Sources a file if it exists.
+source_if_exists() {
+  if [ -f $1 ]
+  then
+    source $1
+  fi
+}
 
-source ~/.bash/aliases.sh
-if [ -f ~/.bash/aliases_local.sh ]; then
-    source ~/.bash/aliases_local.sh
-fi
+# Loads a partial component of the bash configuration.
+load_partial() {
+  source_if_exists ~/.bash/${1}.sh
+  source_if_exists ~/.bash/${1}_local.sh
+}
 
-source ~/.bash/functions.sh
-if [ -f ~/.bash/functions_local.sh ]; then
-    source ~/.bash/functions_local.sh
-fi
+load_partial 'variables'
+load_partial 'aliases'
 
+# Source bash/git completion.
 if [ -f /etc/bash_completion ]; then
-    source /etc/bash_completion
+  source /etc/bash_completion
 else
-    if [ -f /usr/local/etc/bash_completion.d/git-completion.bash ]; then
-        source /usr/local/etc/bash_completion.d/git-completion.bash
-    fi
-
-    if [ -f /usr/local/etc/bash_completion.d/git-prompt.sh ]; then
-        source /usr/local/etc/bash_completion.d/git-prompt.sh
-    fi
-
-    if [ -f /usr/local/etc/bash_completion.d/git-flow-completion.bash ]; then
-        source /usr/local/etc/bash_completion.d/git-flow-completion.bash
-    fi
+  source_if_exists /usr/local/etc/bash_completion.d/git-completion.bash
+  source_if_exists /usr/local/etc/bash_completion.d/git-prompt.sh
+  source_if_exists /usr/local/etc/bash_completion.d/git-flow-completion.bash
 fi
 
-source ~/.bash/prompt.sh
-if [ -f ~/.bash/prompt_local.sh ]; then
-    source ~/.bash/prompt_local.sh
-fi
-
-if [ -f /usr/local/bin/virtualenvwrapper.sh ]; then
-    source /usr/local/bin/virtualenvwrapper.sh
-fi
+load_partial 'prompt'
+source_if_exists /usr/local/bin/virtualenvwrapper.sh
