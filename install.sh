@@ -10,8 +10,8 @@ if [ ! -L ${HOME}/.bash ]
     ln -sf ${PWD}/_bash ${HOME}/.bash
 fi
 
-ln -sf ${PWD}/_bash_profile ${HOME}/.bash_profile
-ln -sf ${PWD}/_bashrc ${HOME}/.bashrc
+ln -sf ${PWD}/_bash_profile.sh ${HOME}/.bash_profile
+ln -sf ${PWD}/_bashrc.sh ${HOME}/.bashrc
 ln -sf ${PWD}/_gitconfig ${HOME}/.gitconfig
 ln -sf ${PWD}/_gitignore_global ${HOME}/.gitignore_global
 ln -sf ${PWD}/_vimrc ${HOME}/.vimrc
