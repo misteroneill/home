@@ -18,6 +18,11 @@ export GREP_OPTIONS="--color=auto -I"
 export WORKON_HOME="$HOME/.virtualenvs"
 export PIP_VIRTUALENV_BASE="$WORKON_HOME"
 
+# On a Mac, we want Homebrew to be the boss.
+if [ $HOST_TYPE = "mac" ]; then
+  export PATH=/usr/local/bin:$PATH
+fi
+
 # List colors
 if [ $HOST_TYPE = "mac" ]; then
     export LSCOLORS='Gxfxcxdxdxegedabagacad'
