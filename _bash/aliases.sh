@@ -20,6 +20,13 @@ alias ping='ping -c 5'
 alias greprg='grep -r --exclude="\.git"'
 alias pypath='python -c "import sys; print sys.path" | tr "," "\n" | grep -v "egg"'
 
+mkdirpcd() {
+    mkdir -p $1
+    cd $1
+}
+
+alias mkdirpcd=mkdirpcd
+
 if [ $HOST_TYPE = "mac" ]; then
     alias hiddenshow='defaults write com.apple.finder AppleShowAllFiles -bool true; KillAll Finder;'
     alias hiddenhide='defaults write com.apple.finder AppleShowAllFiles -bool false; KillAll Finder;'
