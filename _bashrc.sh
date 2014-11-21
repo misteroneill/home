@@ -25,5 +25,15 @@ else
   source_if_exists /usr/local/etc/bash_completion.d/git-flow-completion.bash
 fi
 
+# pip bash completion start
+_pip_completion()
+{
+    COMPREPLY=( $( COMP_WORDS="${COMP_WORDS[*]}" \
+                           COMP_CWORD=$COMP_CWORD \
+                                              PIP_AUTO_COMPLETE=1 $1 ) )
+}
+complete -o default -F _pip_completion pip
+# pip bash completion end
+
 load_partial 'prompt'
 source_if_exists /usr/local/bin/virtualenvwrapper.sh
