@@ -7,7 +7,7 @@
 # also not desirable. :)
 if [ ! -L ${HOME}/.bash ]
   then
-    ln -sf ${PWD}/_bash ${HOME}/.bash
+    ln -sfF ${PWD}/_bash ${HOME}/.bash
 fi
 
 ln -sf ${PWD}/_bash_profile.sh ${HOME}/.bash_profile
