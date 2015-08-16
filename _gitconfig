@@ -9,7 +9,7 @@
     ui = true
     pager = true
 [core]
-    excludesfile = ~/.gitignore_global
+    excludesfile = ~/.gitignore-global
     whitespace = trailing-space,space-before-tab
 [branch]
     autosetuprebase = always

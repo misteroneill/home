@@ -1,0 +1,29 @@
+#!/bin/bash
+
+if [ ! `which git` ]; then
+  echo "Cannot continue: Git is not installed"
+  exit 1
+elif [ -f ${HOME}/.bash_profile ] ||
+     [ -f ${HOME}/.bashrc ] ||
+     [ -f ${HOME}/.gitconfig ] ||
+     [ -f ${HOME}/.gitignore-global ] ||
+     [ -f ${HOME}/.npmrc ] ||
+     [ -f ${HOME}/.vimrc ]; then
+  echo "Cannot continue: one or more target file(s) already exists"
+  exit 1
+fi
+
+mkdir -p ${HOME}/.vim/bundle
+
+if [ ! -d ${HOME}/.vim/bundle/Vundle.vim ]; then
+  git clone https://github.com/gmarik/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
+fi
+
+ln -sf ${PWD}/_bash_profile ${HOME}/.bash_profile
+ln -sf ${PWD}/_bashrc ${HOME}/.bashrc
+ln -sf ${PWD}/_gitconfig ${HOME}/.gitconfig
+ln -sf ${PWD}/_gitignore-global ${HOME}/.gitignore-global
+ln -sf ${PWD}/_npmrc ${HOME}/.npmrc
+ln -sf ${PWD}/_vimrc ${HOME}/.vimrc
+
+echo "Installed!"

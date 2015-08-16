@@ -1,0 +1,87 @@
+source_if_exists() {
+  if [ -f $1 ]; then
+    . $1
+  fi
+}
+
+# Editors
+export EDITOR="vim"
+export GIT_EDITOR="vim"
+
+# Highlight search term, ignore binaries.
+export GREP_OPTIONS="--color=auto -I --exclude='\.git'"
+
+# Homebrew takes precedence over other $PATH entries.
+export PATH=/usr/local/bin:$PATH
+
+# List colors
+export LSCOLORS="Gxfxcxdxdxegedabagacad"
+export CLICOLOR=1
+
+alias ..="cd .."         # Go up 1 directory
+alias ...="cd ../.."     # Go up 2 directories
+alias ....="cd ../../.." # Go up 3 directories
+
+alias l="ls -lah"        # Long view, show hidden
+alias la="ls -AF"        # Compact view, show hidden
+alias ll="ls -lFh"       # Long view, no hidden
+
+alias ping="ping -c 5"
+
+# Git
+# ===
+
+source_if_exists /usr/local/etc/bash_completion.d/git-completion.bash
+source_if_exists /usr/local/etc/bash_completion.d/git-prompt.sh
+
+# NodeJS
+# ======
+
+export NVM_DIR="/Users/poneill/.nvm"
+
+if [ -s "$NVM_DIR/nvm.sh" ]; then
+  . "$NVM_DIR/nvm.sh"
+fi
+
+# Python
+# ======
+
+export WORKON_HOME="$HOME/.virtualenvs"
+export PIP_VIRTUALENV_BASE="$WORKON_HOME"
+
+pip_completion() {
+  COMPREPLY=($(COMP_WORDS="${COMP_WORDS[*]}" \
+               COMP_CWORD=$COMP_CWORD \
+               PIP_AUTO_COMPLETE=1 $1))
+}
+
+complete -o default -F pip_completion pip
+
+source_if_exists /usr/local/bin/virtualenvwrapper.sh
+
+alias pypath="python -c 'import sys; print sys.path' | tr ',' '\n' | grep -v 'egg'"
+
+# Prompt
+# ======
+
+COLOR_BLACK="\[\033[0;30m\]"
+COLOR_BOLD_BLACK="\[\033[1;30m\]"
+COLOR_WHITE="\[\033[0;37m\]"
+COLOR_BOLD_WHITE="\[\033[1;37m\]"
+COLOR_BLUE="\[\033[0;34m\]"
+COLOR_BOLD_BLUE="\[\033[1;34m\]"
+COLOR_GREEN="\[\033[0;32m\]"
+COLOR_BOLD_GREEN="\[\033[1;32m\]"
+COLOR_CYAN="\[\033[0;36m\]"
+COLOR_BOLD_CYAN="\[\033[1;36m\]"
+COLOR_RED="\[\033[0;31m\]"
+COLOR_BOLD_RED="\[\033[1;31m\]"
+COLOR_PURPLE="\[\033[0;35m\]"
+COLOR_BOLD_PURPLE="\[\033[1;35m\]"
+COLOR_BROWN="\[\033[0;33m\]"
+COLOR_BOLD_BROWN="\[\033[1;33m\]"
+COLOR_DEFAULT="\[\033[00m\]"
+
+GIT_PS1_SHOWDIRTYSTATE=true
+
+export PS1="$COLOR_PURPLE\W$COLOR_CYAN\$(__git_ps1) $COLOR_DEFAULT\n$ "
