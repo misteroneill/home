@@ -1,6 +1,6 @@
 # misteroneill/home
 
-My OS X user directory files/setup.
+My Linux/OS X user directory files/setup.
 
 ## Dependencies
 
