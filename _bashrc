@@ -17,7 +17,7 @@ esac
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 
-# Highlight search term, ignore binaries.
+# Highlight search term, ignore binaries and git directories.
 export GREP_OPTIONS="--color=auto -I --exclude='\.git'"
 
 # On a Mac, we want Homebrew to be the boss.

@@ -1,5 +1,7 @@
 #!/bin/bash
 
+DIR=$( cd "$( dirname "${BASH_SOURCE[0]}" )" && pwd )
+
 if [ ! `which git` ]; then
   echo "Cannot continue: Git is not installed"
   exit 1
@@ -19,11 +21,11 @@ if [ ! -d ${HOME}/.vim/bundle/Vundle.vim ]; then
   git clone https://github.com/gmarik/Vundle.vim.git ${HOME}/.vim/bundle/Vundle.vim
 fi
 
-ln -sf ${PWD}/_bash_profile ${HOME}/.bash_profile
-ln -sf ${PWD}/_bashrc ${HOME}/.bashrc
-ln -sf ${PWD}/_gitconfig ${HOME}/.gitconfig
-ln -sf ${PWD}/_gitignore-global ${HOME}/.gitignore-global
-ln -sf ${PWD}/_npmrc ${HOME}/.npmrc
-ln -sf ${PWD}/_vimrc ${HOME}/.vimrc
+ln -sf ${DIR}/_bash_profile ${HOME}/.bash_profile
+ln -sf ${DIR}/_bashrc ${HOME}/.bashrc
+ln -sf ${DIR}/_gitconfig ${HOME}/.gitconfig
+ln -sf ${DIR}/_gitignore-global ${HOME}/.gitignore-global
+ln -sf ${DIR}/_npmrc ${HOME}/.npmrc
+ln -sf ${DIR}/_vimrc ${HOME}/.vimrc
 
 echo "Installed!"
