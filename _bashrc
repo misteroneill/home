@@ -102,3 +102,10 @@ COLOR_DEFAULT="\[\033[00m\]"
 GIT_PS1_SHOWDIRTYSTATE=true
 
 export PS1="$COLOR_PURPLE\W$COLOR_CYAN\$(__git_ps1) $COLOR_DEFAULT\n$ "
+
+# Local Customization
+# ===================
+
+if [ -e ${HOME}/.bashrc-local ]; then
+  . ${HOME}/.bashrc-local
+fi
