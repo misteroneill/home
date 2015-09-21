@@ -4,39 +4,32 @@ source_if_exists() {
   fi
 }
 
-case `uname` in
-  Darwin)
-    export HOST_TYPE='mac'
-    ;;
-  *)
-    export HOST_TYPE='linux'
-    ;;
-esac
+if [ $(uname) = "Darwin" ]; then
+  IS_MAC=true
+fi
 
 # Editors
 export EDITOR="vim"
 export GIT_EDITOR="vim"
 
-# Highlight search term, ignore binaries and git directories.
-export GREP_OPTIONS="--color=auto -I --exclude='\.git'"
-
 # On a Mac, we want Homebrew to be the boss.
-if [ $HOST_TYPE = "mac" ]; then
-  export PATH=/usr/local/bin:$PATH
+if [ $IS_MAC ]; then
+  export PATH="/usr/local/bin:$PATH"
+  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
 # List colors
-if [ $HOST_TYPE = "mac" ]; then
-  export LSCOLORS='Gxfxcxdxdxegedabagacad'
-  export CLICOLOR=1
-else
-  export LS_COLORS="di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=32;38:tw=0;42:ow=0;43:"
-fi
+export LS_COLORS="di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=32;38:tw=0;42:ow=0;43:"
 
 alias ..="cd .."         # Go up 1 directory
 alias ...="cd ../.."     # Go up 2 directories
 alias ....="cd ../../.." # Go up 3 directories
 
+# Highlight search term, ignore binaries and .git directories.
+alias grep="grep --color=auto -I --exclude='\.git'"
+
+alias ls="ls --color"    # Colored listings
 alias l="ls -lah"        # Long view, show hidden
 alias la="ls -AF"        # Compact view, show hidden
 alias ll="ls -lFh"       # Long view, no hidden
@@ -54,7 +47,7 @@ source_if_exists /usr/local/etc/bash_completion.d/git-prompt.sh
 # NodeJS
 # ======
 
-export NVM_DIR="/Users/poneill/.nvm"
+export NVM_DIR="$HOME/.nvm"
 
 if [ -s "$NVM_DIR/nvm.sh" ]; then
   . "$NVM_DIR/nvm.sh"
