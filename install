@@ -9,7 +9,6 @@ elif [ -f ${HOME}/.bash_profile ] ||
      [ -f ${HOME}/.bashrc ] ||
      [ -f ${HOME}/.gitconfig ] ||
      [ -f ${HOME}/.gitignore-global ] ||
-     [ -f ${HOME}/.npmrc ] ||
      [ -f ${HOME}/.vimrc ]; then
   echo "Cannot continue: one or more target file(s) already exists"
   exit 1
@@ -25,7 +24,6 @@ ln -sf ${DIR}/_bash_profile ${HOME}/.bash_profile
 ln -sf ${DIR}/_bashrc ${HOME}/.bashrc
 ln -sf ${DIR}/_gitconfig ${HOME}/.gitconfig
 ln -sf ${DIR}/_gitignore-global ${HOME}/.gitignore-global
-ln -sf ${DIR}/_npmrc ${HOME}/.npmrc
 ln -sf ${DIR}/_vimrc ${HOME}/.vimrc
 
 echo "Installed!"

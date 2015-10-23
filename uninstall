@@ -11,5 +11,4 @@ rm_if_exists ${HOME}/.bash_profile
 rm_if_exists ${HOME}/.bashrc
 rm_if_exists ${HOME}/.gitconfig
 rm_if_exists ${HOME}/.gitignore-global
-rm_if_exists ${HOME}/.npmrc
 rm_if_exists ${HOME}/.vimrc
