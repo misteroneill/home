@@ -1,31 +1,4 @@
 " =====================================================================
-" Vundle
-" =====================================================================
-set nocompatible               " be iMproved, required
-filetype off                   " required
-
-" set the runtime path to include Vundle and initialize
-set rtp+=~/.vim/bundle/Vundle.vim
-call vundle#begin()
-
-" Let Vundle manage Vundle, required
-Plugin 'gmarik/Vundle.vim'
-
-" Plugins
-Plugin 'tpope/vim-haml'
-Plugin 'kchmck/vim-coffee-script'
-Plugin 'mustache/vim-mustache-handlebars'
-Plugin 'scrooloose/nerdtree'
-Plugin 'scrooloose/syntastic'
-
-" Colors
-Plugin 'altercation/vim-colors-solarized'
-
-" All of your Plugins must be added before the following line
-call vundle#end()            " required
-filetype plugin indent on    " required
-
-" =====================================================================
 " Settings
 " =====================================================================
 set ls=2            " always show status line
@@ -61,14 +34,8 @@ set smarttab                " Handle tabs more intelligently
 set hlsearch                " Highlight searches by default.
 set incsearch               " Incrementally search while typing a /regex
 
-set guifont=Source\ Code\ Pro:h15
-
 syntax on
 set background=dark
-
-let g:solarized_termcolors=256           " use degraded 256 colorscheme in terminal
-let g:solarized_termtrans=1
-colorscheme solarized
 
 " ctrl-jklm  changes to that split
 map <c-j> <c-w>j

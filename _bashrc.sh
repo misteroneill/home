@@ -1,6 +1,6 @@
 source_if_exists() {
-  if [ -f $1 ]; then
-    . $1
+  if [ -e $1 ]; then
+    source $1
   fi
 }
 
@@ -22,10 +22,6 @@ fi
 # List colors
 export LS_COLORS="di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=32;38:tw=0;42:ow=0;43:"
 
-alias ..="cd .."         # Go up 1 directory
-alias ...="cd ../.."     # Go up 2 directories
-alias ....="cd ../../.." # Go up 3 directories
-
 # Highlight search term, ignore binaries and .git directories.
 alias grep="grep --color=auto -I --exclude='\.git'"
 
@@ -36,22 +32,18 @@ alias ll="ls -lFh"       # Long view, no hidden
 
 alias ping="ping -c 5"
 
-source_if_exists /etc/bash_completion
+# Bash Completion
+# ===============
 
-# Git
-# ===
+source_if_exists "/etc/bash_completion"
+source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
+source_if_exists "/usr/local/etc/bash_completion.d/git-prompt.sh"
 
-source_if_exists /usr/local/etc/bash_completion.d/git-completion.bash
-source_if_exists /usr/local/etc/bash_completion.d/git-prompt.sh
-
-# NodeJS
-# ======
+# Node
+# ====
 
 export NVM_DIR="$HOME/.nvm"
-
-if [ -s "$NVM_DIR/nvm.sh" ]; then
-  . "$NVM_DIR/nvm.sh"
-fi
+source_if_exists "$NVM_DIR/nvm.sh"
 
 # Python
 # ======
@@ -67,7 +59,7 @@ pip_completion() {
 
 complete -o default -F pip_completion pip
 
-source_if_exists /usr/local/bin/virtualenvwrapper.sh
+source_if_exists "/usr/local/bin/virtualenvwrapper.sh"
 
 alias pypath="python -c 'import sys; print sys.path' | tr ',' '\n' | grep -v 'egg'"
 
@@ -105,6 +97,4 @@ export PS1
 # Local Customization
 # ===================
 
-if [ -e ${HOME}/.bashrc-local ]; then
-  . ${HOME}/.bashrc-local
-fi
+source_if_exists "${HOME}/.bashrc-local"

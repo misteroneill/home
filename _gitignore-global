@@ -34,4 +34,6 @@ Thumbs.db
 *.sublime-*
 
 # Environments
+bower_components/
+dist/
 node_modules/
