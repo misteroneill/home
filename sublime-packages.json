@@ -1,0 +1,21 @@
+{
+  "installed_packages":
+  [
+    "Babel",
+    "Base16 Color Schemes",
+    "CodeFormatter",
+    "DocBlockr",
+    "EditorConfig",
+    "EJS",
+    "Git",
+    "Git Config",
+    "Handlebars",
+    "Jade",
+    "LESS",
+    "Markdown Preview",
+    "Package Control",
+    "Sass",
+    "Theme - SoDaReloaded",
+    "VimL"
+  ]
+}

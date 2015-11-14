@@ -1,29 +1,35 @@
 #!/usr/bin/env bash
 
-NVM_VERSION=0.29.0
-NODE_DEFAULT=4
+NVM_VERSION="0.29.0"
+NODE_DEFAULT="4"
 
 NODE_VERSIONS=(
-  0.10
-  0.12
-  4
-  5
+  "0.10"
+  "0.12"
+  "4"
+  "5"
 )
 
+declare -A NPM_VERSIONS
+NPM_VERSIONS["0.10"]="1.x.x"
+NPM_VERSIONS["0.12"]="2.x.x"
+NPM_VERSIONS["4"]="3.x.x"
+NPM_VERSIONS["5"]="3.x.x"
+
 NPM_PACKAGES=(
-  babel-cli
-  browserify
-  documentation
-  eslint
-  grunt-cli
-  gulp
-  karma-cli
-  mocha
-  node-sass
-  uglifyjs
-  watch
-  watchify
-  yo
+  "babel@5"
+  "browserify"
+  "documentation"
+  "eslint"
+  "grunt-cli"
+  "gulp"
+  "karma-cli"
+  "mocha"
+  "node-sass"
+  "uglifyjs"
+  "watch"
+  "watchify"
+  "yo"
 )
 
 echo "Setup nvm/Node/npm..."
@@ -40,7 +46,7 @@ else
   for i in "${NODE_VERSIONS[@]}"
   do
     nvm install $i
-    npm i -g npm
+    npm i -g npm@${NPM_VERSIONS[$i]}
   done
 
   # Switch on the default Node and install all the global npm packages to it.

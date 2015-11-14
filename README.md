@@ -18,4 +18,5 @@ Each script can be run independently. Most have opposite `un` versions (e.g. `ho
 - `brew.sh`: If the host is a Mac, set up Homebrew and key programs. Unlike other scripts, there is no `unbrew.sh` at the moment because uninstalling Homebrew is not a pretty process.
 - `home.sh`: Set up important files in the `$HOME` directory.
 - `node.sh`: Set up nvm, Node, and npm in various versions.
-- `install.sh`: Set up a new machine (`brew.sh` + `home.sh` + `node.sh`). 
+- `sublime.js`: Depends on `babel-node` being installed (which `node.sh` does). Sets up platform-specific defaults for Sublime Text 3. _It is best for ST3 and Package Control to be installed before-hand!_
+- `install.sh`: Set up a new machine (`brew.sh` + `home.sh` + `node.sh` + `sublime.js`).
