@@ -32,8 +32,8 @@ Thumbs.db
 *.swp
 *.tmproj
 *.sublime-*
+.vscode/
 
 # Environments
 bower_components/
-dist/
 node_modules/
