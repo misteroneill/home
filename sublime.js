@@ -63,4 +63,23 @@ cp.spawn('mkdir', ['-p', path.dirname(prefs)]).on('close', code => {
   writeJSON(pkgctrl, readJSON(here('sublime-packages.json')));
   console.log(`Wrote Package Control preferences to ${pkgctrl}`);
   console.log('Restart Sublime Text 3 if it is running!');
+
+  fs.symlink(here('sublp.sh'), '/usr/local/bin/sublp', function(err) {
+    if (err) {
+      console.error('Unable to symlink the "sublp" script!');
+      return;
+    }
+    console.log('Symlinked the "sublp" script into /usr/local/bin.');
+  });
+
+  // Symlink Sublime Text into /usr/local/bin. This is only necessary on OS X.
+  if (mac) {
+    fs.symlink('/Applications/Sublime Text.app/Contents/SharedSupport/bin/subl', '/usr/local/bin/subl', function(err) {
+      if (err) {
+        console.error('Unable to symlink Sublime Text!');
+        return;
+      }
+      console.log('Symlinked Sublime Text into /usr/local/bin.');
+    });
+  }
 });
