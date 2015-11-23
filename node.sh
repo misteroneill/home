@@ -1,19 +1,17 @@
 #!/usr/bin/env bash
 
 NVM_VERSION="0.29.0"
-NODE_DEFAULT="4"
+NODE_DEFAULT="0.10"
 
 NODE_VERSIONS=(
   "0.10"
-  "0.12"
   "4"
   "5"
 )
 
 declare -A NPM_VERSIONS
-NPM_VERSIONS["0.10"]="1.x.x"
-NPM_VERSIONS["0.12"]="2.x.x"
-NPM_VERSIONS["4"]="3.x.x"
+NPM_VERSIONS["0.10"]="2.x.x"
+NPM_VERSIONS["4"]="2.x.x"
 NPM_VERSIONS["5"]="3.x.x"
 
 NPM_PACKAGES=(
