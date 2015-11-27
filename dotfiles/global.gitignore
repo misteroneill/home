@@ -34,6 +34,7 @@ Thumbs.db
 *.sublime-*
 .vscode/
 
-# Environments
+# Environments/Tooling
+.yo-rc.json
 bower_components/
 node_modules/

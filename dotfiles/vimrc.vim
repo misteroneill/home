@@ -18,9 +18,9 @@ set vb t_vb=
 " indent 4 spaces
 set autoindent              " always set autoindenting on
 set smartindent             " use smart indent if there is no indent file
-set tabstop=4               " <tab> inserts 4 spaces
-set shiftwidth=4            " but an indent level is 2 spaces wide.
-set softtabstop=4           " <BS> over an autoindent deletes both spaces.
+set tabstop=2               " <tab> inserts 4 spaces
+set shiftwidth=2            " but an indent level is 2 spaces wide.
+set softtabstop=2           " <BS> over an autoindent deletes both spaces.
 set expandtab               " Use spaces, not tabs, for autoindent/tab key.
 set foldmethod=indent       " allow us to fold on indents
 set foldlevel=99            " don't fold by default

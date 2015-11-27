@@ -2,7 +2,7 @@
 
 cd $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 ./brew.sh
-./home.sh
+./dotfiles.sh
 ./node.sh
-sudo ./sublime.js
+./sublime.sh
 echo "Install finished! Make sure you: source ~/.bashrc"

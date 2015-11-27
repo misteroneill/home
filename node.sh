@@ -54,4 +54,6 @@ else
 
   # Set up user npm configuration
   npm config set depth 0
+
+  npm i object-assign
 fi

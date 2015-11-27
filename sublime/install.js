@@ -1,5 +1,4 @@
-#!/usr/bin/env babel-node
-
+import assign from 'object-assign';
 import cp from 'child_process';
 import fs from 'fs';
 import path from 'path';
@@ -53,7 +52,7 @@ cp.spawn('mkdir', ['-p', path.dirname(prefs)]).on('close', code => {
   // The common/platform preferences override the current prefs because any
   // customizations to the preferences defined here should be moved to this
   // repo rather than living on an individual machine.
-  const combined = Object.assign({}, current, common, platform);
+  const combined = assign({}, current, common, platform);
 
   writeJSON(prefs, combined);
   console.log(`Wrote Sublime preferences to ${prefs}`);
