@@ -31,12 +31,14 @@ if [ $IS_MAC ]; then
       brew install --with-default-names homebrew/dupes/grep
 
       BREW_PACKAGES=(
-        git
-        wget
+        "git"
+        "wget"
+        "https://raw.githubusercontent.com/puffnfresh/toggle-osx-shadows/master/homebrew/toggle-osx-shadows.rb"
       )
 
       brew install ${BREW_PACKAGES[@]}
       brew cleanup
+      toggle-osx-shadows
     fi
   fi
 fi
