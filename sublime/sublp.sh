@@ -3,5 +3,9 @@
 PROJECT=`ls | grep \.sublime-project$`
 
 if [ `which subl` ]; then
-  subl --project $PROJECT
+  if [ "$PROJECT" ]; then
+    subl --project $PROJECT
+  else
+    subl .
+  fi
 fi
