@@ -33,12 +33,10 @@ if [ $IS_MAC ]; then
       BREW_PACKAGES=(
         "git"
         "wget"
-        "https://raw.githubusercontent.com/puffnfresh/toggle-osx-shadows/master/homebrew/toggle-osx-shadows.rb"
       )
 
       brew install ${BREW_PACKAGES[@]}
       brew cleanup
-      toggle-osx-shadows
     fi
   fi
 fi
