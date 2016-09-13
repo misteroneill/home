@@ -1,7 +1,7 @@
-import assign from 'object-assign';
-import cp from 'child_process';
-import fs from 'fs';
-import path from 'path';
+const assign = require('object.assign');
+const cp = require('child_process');
+const fs = require('fs');
+const path = require('path');
 
 const mac = process.platform === 'darwin';
 
@@ -37,7 +37,7 @@ const writeJSON = (filename, data) => {
 };
 
 const alphabetize = obj => {
-  let result = {};
+  var result = {};
   Object.keys(obj).sort().forEach(key => result[key] = obj[key]);
   return result;
 };

@@ -1,32 +1,26 @@
 #!/usr/bin/env bash
 
-NVM_VERSION="0.29.0"
-NODE_DEFAULT="0.10"
+NVM_VERSION="0.31.7"
+NODE_DEFAULT="lts/argon"
 
 NODE_VERSIONS=(
-  "0.10"
-  "4"
-  "5"
+  "lts/argon"
+  "stable"
 )
 
 declare -A NPM_VERSIONS
-NPM_VERSIONS["0.10"]="2.x.x"
-NPM_VERSIONS["4"]="2.x.x"
-NPM_VERSIONS["5"]="3.x.x"
+NPM_VERSIONS["lts/argon"]="latest-2"
+NPM_VERSIONS["stable"]="latest"
 
 NPM_PACKAGES=(
-  "babel@5"
+  "babel-cli"
   "browserify"
-  "documentation"
   "eslint"
   "grunt-cli"
   "gulp"
   "karma-cli"
   "mocha"
-  "node-sass"
   "uglifyjs"
-  "watch"
-  "watchify"
   "yo"
 )
 
@@ -55,5 +49,5 @@ else
   # Set up user npm configuration
   npm config set depth 0
 
-  npm i object-assign
+  npm i object.assign
 fi

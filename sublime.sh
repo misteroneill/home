@@ -2,7 +2,7 @@
 
 cd $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
 
-babel-node sublime/install.js
+node sublime/install.js
 
 # Symlink binaries...
 sudo mkdir -p /usr/local/bin
