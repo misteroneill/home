@@ -2,7 +2,8 @@
   "installed_packages":
   [
     "Babel",
-    "Base16 Color Schemes",
+    "CaseConversion",
+    "ChangeQuotes",
     "CodeFormatter",
     "DocBlockr",
     "EditorConfig",
@@ -10,11 +11,11 @@
     "Git",
     "Git Config",
     "Handlebars",
-    "Jade",
     "LESS",
     "Markdown Preview",
     "Package Control",
     "Sass",
+    "Solarized Color Scheme",
     "Theme - SoDaReloaded",
     "VimL"
   ]

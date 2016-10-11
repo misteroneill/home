@@ -19,6 +19,9 @@ if [ $IS_MAC ]; then
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 fi
 
+# Include Yarn.
+export PATH="$HOME/.yarn/bin:$PATH"
+
 # List colors
 export LS_COLORS="di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=32;38:tw=0;42:ow=0;43:"
 
