@@ -27,11 +27,13 @@ export LS_COLORS="di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43
 
 # Highlight search term, ignore binaries and .git directories.
 alias grep="grep --color=auto -I --exclude='\.git'"
+alias fgrep="fgrep --color=auto -I --exclude='\.git'"
+alias egrep="egrep --color=auto -I --exclude='\.git'"
 
-alias ls="ls --color"    # Colored listings
-alias l="ls -lah"        # Long view, show hidden
-alias la="ls -AF"        # Compact view, show hidden
-alias ll="ls -lFh"       # Long view, no hidden
+alias ls="ls --color=auto"
+alias ll="ls -alF"
+alias la="ls -A"
+alias l="ls -CF"
 
 alias ping="ping -c 5"
 
@@ -39,6 +41,7 @@ alias ping="ping -c 5"
 # ===============
 
 source_if_exists "/etc/bash_completion"
+source_if_exists "/usr/share/bash-completion/bash_completion"
 source_if_exists "/usr/local/etc/bash_completion.d/git-completion.bash"
 source_if_exists "/usr/local/etc/bash_completion.d/git-prompt.sh"
 
