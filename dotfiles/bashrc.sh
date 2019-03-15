@@ -104,3 +104,4 @@ export PS1
 # ===================
 
 source_if_exists "${HOME}/.bashrc-local"
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion

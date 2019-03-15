@@ -2,7 +2,7 @@
   "default_line_ending": "unix",
   "detect_indentation": true,
   "drag_text": false,
-  "draw_white_space": "all",
+  "draw_white_space": "selection",
   "ensure_newline_at_eof_on_save": true,
   "folder_exclude_patterns": [
     ".svn",

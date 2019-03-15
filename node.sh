@@ -1,27 +1,11 @@
 #!/usr/bin/env bash
 
-NVM_VERSION="0.31.7"
-NODE_DEFAULT="lts/argon"
+NVM_VERSION="0.34.0"
+NODE_DEFAULT="lts/dubnium"
 
 NODE_VERSIONS=(
   "lts/argon"
-  "stable"
-)
-
-declare -A NPM_VERSIONS
-NPM_VERSIONS["lts/argon"]="latest-2"
-NPM_VERSIONS["stable"]="latest"
-
-NPM_PACKAGES=(
-  "babel-cli"
-  "browserify"
-  "eslint"
-  "grunt-cli"
-  "gulp"
-  "karma-cli"
-  "mocha"
-  "uglifyjs"
-  "yo"
+  "lts/dubnium"
 )
 
 echo "Setup nvm/Node/npm..."
@@ -38,16 +22,13 @@ else
   for i in "${NODE_VERSIONS[@]}"
   do
     nvm install $i
-    npm i -g npm@${NPM_VERSIONS[$i]}
+
+    # Set up user npm configuration
+    npm config set depth 0
   done
 
   # Switch on the default Node and install all the global npm packages to it.
   nvm alias default ${NODE_DEFAULT}
   nvm use default
-  npm i -g ${NPM_PACKAGES[@]}
 
-  # Set up user npm configuration
-  npm config set depth 0
-
-  npm i object.assign
 fi

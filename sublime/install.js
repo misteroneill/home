@@ -1,4 +1,3 @@
-const assign = require('object.assign');
 const cp = require('child_process');
 const fs = require('fs');
 const path = require('path');
@@ -52,7 +51,7 @@ cp.spawn('mkdir', ['-p', dir]).on('close', code => {
   // The common/platform preferences override the current prefs because any
   // customizations to the preferences defined here should be moved to this
   // repo rather than living on an individual machine.
-  const combined = assign({}, current, common, platform);
+  const combined = Object.assign({}, current, common, platform);
 
   writeJSON(prefs, combined);
   console.log(`Wrote Sublime preferences to ${prefs}`);
