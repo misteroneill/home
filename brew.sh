@@ -24,18 +24,7 @@ if [ $IS_MAC ]; then
       brew update
 
       # Install GNU coreutils. These are overridden on the $PATH in _bashrc.
-      brew install coreutils
-
-      # Install GNU grep.
-      brew tap homebrew/dupes
-      brew install --with-default-names homebrew/dupes/grep
-
-      BREW_PACKAGES=(
-        "git"
-        "wget"
-      )
-
-      brew install ${BREW_PACKAGES[@]}
+      brew install coreutils grep git wget
       brew cleanup
     fi
   fi

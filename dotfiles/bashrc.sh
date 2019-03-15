@@ -16,7 +16,9 @@ export GIT_EDITOR="vim"
 if [ $IS_MAC ]; then
   export PATH="/usr/local/bin:$PATH"
   export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+  export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
   export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+  export MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
 fi
 
 # Include Yarn.
