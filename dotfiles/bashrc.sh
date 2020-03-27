@@ -53,6 +53,59 @@ source_if_exists "/usr/local/etc/bash_completion.d/git-prompt.sh"
 export NVM_DIR="$HOME/.nvm"
 source_if_exists "$NVM_DIR/nvm.sh"
 
+find-up(){
+    path=$(pwd)
+    while [[ "$path" != "" && ! -e "$path/$1" ]]; do
+        path=${path%/*}
+    done
+    echo "$path"
+}
+
+cdnvm(){
+    cd "$@";
+    nvm_path=$(find-up .nvmrc | tr -d '[:space:]')
+
+    # If there are no .nvmrc file, use the default nvm version
+    if [[ ! $nvm_path = *[^[:space:]]* ]]; then
+
+        declare default_version;
+        default_version=$(nvm version default);
+
+        # If there is no default version, set it to `node`
+        # This will use the latest version on your machine
+        if [[ $default_version == "N/A" ]]; then
+            nvm alias default node;
+            default_version=$(nvm version default);
+        fi
+
+        # If the current version is not the default version, set it to use the default version
+        if [[ $(nvm current) != "$default_version" ]]; then
+            nvm use default;
+        fi
+
+        elif [[ -s $nvm_path/.nvmrc && -r $nvm_path/.nvmrc ]]; then
+        declare nvm_version
+        nvm_version=$(<"$nvm_path"/.nvmrc)
+
+        declare locally_resolved_nvm_version
+        # `nvm ls` will check all locally-available versions
+        # If there are multiple matching versions, take the latest one
+        # Remove the `->` and `*` characters and spaces
+        # `locally_resolved_nvm_version` will be `N/A` if no local versions are found
+        locally_resolved_nvm_version=$(nvm ls --no-colors "$nvm_version" | tail -1 | tr -d '\->*' | tr -d '[:space:]')
+
+        # If it is not already installed, install it
+        # `nvm install` will implicitly use the newly-installed version
+        if [[ "$locally_resolved_nvm_version" == "N/A" ]]; then
+            nvm install "$nvm_version";
+        elif [[ $(nvm current) != "$locally_resolved_nvm_version" ]]; then
+            nvm use "$nvm_version";
+        fi
+    fi
+}
+
+alias cd='cdnvm'
+
 # Python
 # ======
 
@@ -74,23 +127,23 @@ alias pypath="python -c 'import sys; print sys.path' | tr ',' '\n' | grep -v 'eg
 # Prompt
 # ======
 
-COLOR_BLACK="\[\033[0;30m\]"
-COLOR_BOLD_BLACK="\[\033[1;30m\]"
-COLOR_WHITE="\[\033[0;37m\]"
-COLOR_BOLD_WHITE="\[\033[1;37m\]"
-COLOR_BLUE="\[\033[0;34m\]"
-COLOR_BOLD_BLUE="\[\033[1;34m\]"
-COLOR_GREEN="\[\033[0;32m\]"
-COLOR_BOLD_GREEN="\[\033[1;32m\]"
-COLOR_CYAN="\[\033[0;36m\]"
-COLOR_BOLD_CYAN="\[\033[1;36m\]"
-COLOR_RED="\[\033[0;31m\]"
-COLOR_BOLD_RED="\[\033[1;31m\]"
-COLOR_PURPLE="\[\033[0;35m\]"
-COLOR_BOLD_PURPLE="\[\033[1;35m\]"
-COLOR_BROWN="\[\033[0;33m\]"
-COLOR_BOLD_BROWN="\[\033[1;33m\]"
-COLOR_DEFAULT="\[\033[00m\]"
+export COLOR_BLACK="\[\033[0;30m\]"
+export COLOR_BOLD_BLACK="\[\033[1;30m\]"
+export COLOR_WHITE="\[\033[0;37m\]"
+export COLOR_BOLD_WHITE="\[\033[1;37m\]"
+export COLOR_BLUE="\[\033[0;34m\]"
+export COLOR_BOLD_BLUE="\[\033[1;34m\]"
+export COLOR_GREEN="\[\033[0;32m\]"
+export COLOR_BOLD_GREEN="\[\033[1;32m\]"
+export COLOR_CYAN="\[\033[0;36m\]"
+export COLOR_BOLD_CYAN="\[\033[1;36m\]"
+export COLOR_RED="\[\033[0;31m\]"
+export COLOR_BOLD_RED="\[\033[1;31m\]"
+export COLOR_PURPLE="\[\033[0;35m\]"
+export COLOR_BOLD_PURPLE="\[\033[1;35m\]"
+export COLOR_BROWN="\[\033[0;33m\]"
+export COLOR_BOLD_BROWN="\[\033[1;33m\]"
+export COLOR_DEFAULT="\[\033[00m\]"
 
 GIT_PS1_SHOWDIRTYSTATE=true
 
