@@ -1,11 +1,10 @@
 #!/usr/bin/env bash
 
-NVM_VERSION="0.34.0"
-NODE_DEFAULT="lts/dubnium"
+NVM_VERSION="0.35.3"
+NODE_DEFAULT="lts/erbium"
 
 NODE_VERSIONS=(
-  "lts/argon"
-  "lts/dubnium"
+  "lts/erbium"
 )
 
 echo "Setup nvm/Node/npm..."
@@ -15,7 +14,7 @@ if [ -e ${HOME}/.nvm/nvm.sh ]; then
 else
 
   # Install nvm if needed and source it.
-  curl -o- https://raw.githubusercontent.com/creationix/nvm/v${NVM_VERSION}/install.sh | bash
+  curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v${NVM_VERSION}/install.sh | bash
   source ${HOME}/.nvm/nvm.sh
 
   # Install each version of Node and update its npm.
