@@ -1,4 +1,4 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 rm_if_exists(){
   if [ -L ${HOME}/${1} ]; then
@@ -7,8 +7,6 @@ rm_if_exists(){
   fi
 }
 
-rm_if_exists ".bash_profile"
-rm_if_exists ".bashrc"
 rm_if_exists ".gitconfig"
-rm_if_exists ".gitignore-global"
+rm_if_exists ".gitignore"
 rm_if_exists ".vimrc"

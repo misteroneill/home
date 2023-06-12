@@ -1,8 +1,6 @@
-#!/usr/bin/env bash
+#!/usr/bin/env zsh
 
 cd $(cd "$(dirname "${BASH_SOURCE[0]}")" && pwd)
-./brew.sh
 ./dotfiles.sh
 ./node.sh
-# ./sublime.sh
-echo "Install finished! Make sure you: source ~/.bashrc"
+echo "Install finished! Make sure you: source ~/.zshrc"

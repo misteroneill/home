@@ -2,7 +2,6 @@
   "installed_packages":
   [
     "Babel",
-    "CaseConversion",
     "ChangeQuotes",
     "CodeFormatter",
     "DocBlockr",
