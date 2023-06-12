@@ -1,10 +1,12 @@
 # misteroneill/home
 
-My Linux/OS X user directory files/setup.
+My OS X user directory files/setup.
 
 ## Dependencies
 
 - Xcode Command Line Tools + Git
+- Assumes you're using the default `zsh` instead of `bash`
+- Assumes you've installed Sublime Text _and_ Package Control
 
 ## Usage
 
@@ -13,10 +15,8 @@ My Linux/OS X user directory files/setup.
 
 ## Scripts
 
-Each script can be run independently. Most have opposite `un` versions (e.g. `dotfiles.sh` can be reversed with `undotfiles.sh`).
+Each script can be run independently.
 
-- `brew.sh`: If the host is a Mac, set up Homebrew and key programs. Unlike other scripts, there is no `unbrew.sh` at the moment because uninstalling Homebrew is not a pretty process.
 - `dotfiles.sh`: Set up important files in the `$HOME` directory.
-- `node.sh`: Set up nvm, Node, and npm in various versions.
-- `sublime.sh`: Depends on `node` 4.4+ being installed (which `node.sh` does). Sets up platform-specific defaults for Sublime Text 3. _It is best for ST3 and Package Control to be installed before-hand!_
-- `install.sh`: Set up a new machine (`brew.sh` + `dotfiles.sh` + `node.sh` + `sublime.sh`).
+- `node.sh`: Set up nvm and Node in various recent versions.
+- `sublime.sh`: Depends on `node` being installed (which `node.sh` does). Sets up my preferred defaults for Sublime Text.
