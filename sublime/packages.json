@@ -2,12 +2,10 @@
   "installed_packages":
   [
     "Babel",
-    "CaseConversion",
     "ChangeQuotes",
     "CodeFormatter",
     "DocBlockr",
     "EditorConfig",
-    "EJS 2",
     "Git",
     "Git Config",
     "Handlebars",

@@ -1,4 +1,4 @@
-#!/usr/bin/env sh
+#!/usr/bin/env bash
 
 PROJECT=`ls | grep \.sublime-project$`
 
@@ -8,4 +8,7 @@ if [ `which subl` ]; then
   else
     subl .
   fi
+else
+  echo "no subl command!"
+  exit 1
 fi

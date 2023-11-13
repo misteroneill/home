@@ -4,25 +4,12 @@ source_if_exists() {
   fi
 }
 
-if [ $(uname) = "Darwin" ]; then
-  IS_MAC=true
-fi
+# Quiet, macOS, I don't want to change.
+export BASH_SILENCE_DEPRECATION_WARNING=1
 
 # Editors
 export EDITOR="vim"
 export GIT_EDITOR="vim"
-
-# On a Mac, we want Homebrew to be the boss.
-if [ $IS_MAC ]; then
-  export PATH="/usr/local/bin:$PATH"
-  export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-  export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
-  export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
-  export MANPATH="/usr/local/opt/grep/libexec/gnuman:$MANPATH"
-fi
-
-# Include Yarn.
-export PATH="$HOME/.yarn/bin:$PATH"
 
 # List colors
 export LS_COLORS="di=36;40:ln=35;40:so=32;40:pi=33;40:ex=31;40:bd=34;46:cd=34;43:su=0;41:sg=32;38:tw=0;42:ow=0;43:"
@@ -52,18 +39,11 @@ source_if_exists "/usr/local/etc/bash_completion.d/git-prompt.sh"
 
 export NVM_DIR="$HOME/.nvm"
 source_if_exists "$NVM_DIR/nvm.sh"
+source_if_exists "$NVM_DIR/bash_completion"
 
-find-up(){
-    path=$(pwd)
-    while [[ "$path" != "" && ! -e "$path/$1" ]]; do
-        path=${path%/*}
-    done
-    echo "$path"
-}
-
-cdnvm(){
-    cd "$@";
-    nvm_path=$(find-up .nvmrc | tr -d '[:space:]')
+cdnvm() {
+    command cd "$@" || return $?
+    nvm_path=$(nvm_find_up .nvmrc | tr -d '\n')
 
     # If there are no .nvmrc file, use the default nvm version
     if [[ ! $nvm_path = *[^[:space:]]* ]]; then
@@ -83,7 +63,7 @@ cdnvm(){
             nvm use default;
         fi
 
-        elif [[ -s $nvm_path/.nvmrc && -r $nvm_path/.nvmrc ]]; then
+    elif [[ -s $nvm_path/.nvmrc && -r $nvm_path/.nvmrc ]]; then
         declare nvm_version
         nvm_version=$(<"$nvm_path"/.nvmrc)
 
@@ -105,24 +85,7 @@ cdnvm(){
 }
 
 alias cd='cdnvm'
-
-# Python
-# ======
-
-export WORKON_HOME="$HOME/.virtualenvs"
-export PIP_VIRTUALENV_BASE="$WORKON_HOME"
-
-pip_completion() {
-  COMPREPLY=($(COMP_WORDS="${COMP_WORDS[*]}" \
-               COMP_CWORD=$COMP_CWORD \
-               PIP_AUTO_COMPLETE=1 $1))
-}
-
-complete -o default -F pip_completion pip
-
-source_if_exists "/usr/local/bin/virtualenvwrapper.sh"
-
-alias pypath="python -c 'import sys; print sys.path' | tr ',' '\n' | grep -v 'egg'"
+cdnvm "$PWD" || exit
 
 # Prompt
 # ======
@@ -159,4 +122,3 @@ export PS1
 # ===================
 
 source_if_exists "${HOME}/.bashrc-local"
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion"  # This loads nvm bash_completion
