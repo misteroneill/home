@@ -4,6 +4,9 @@
   "drag_text": false,
   "draw_white_space": "selection",
   "ensure_newline_at_eof_on_save": true,
+  "file_exclude_patterns": [
+    "package-lock.json"
+  ],
   "folder_exclude_patterns": [
     ".svn",
     ".git",
@@ -12,8 +15,8 @@
     "bower_components",
     "node_modules"
   ],
-  "font_face": "Monaco",
-  "font_size": 15,
+  "font_face": "PT Mono",
+  "font_size": 16,
   "highlight_line": true,
   "rulers": [80],
   "show_full_path": true,

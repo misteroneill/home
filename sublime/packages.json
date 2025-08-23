@@ -1,20 +1,17 @@
 {
   "installed_packages":
   [
-    "Babel",
     "ChangeQuotes",
     "CodeFormatter",
     "DocBlockr",
-    "EditorConfig",
     "Git",
     "Git Config",
     "Handlebars",
-    "LESS",
-    "Markdown Preview",
+    "MarkdownPreview",
     "Package Control",
     "Sass",
     "Solarized Color Scheme",
     "Theme - SoDaReloaded",
-    "VimL"
+    "VimL",
   ]
 }
