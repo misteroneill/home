@@ -86,8 +86,10 @@ cdnvm() {
     fi
 }
 
-alias cd='cdnvm'
-cdnvm "$PWD" || exit
+if [ -e $NVM_DIR ]; then
+  alias cd='cdnvm'
+  cdnvm "$PWD" || exit
+fi
 
 # Prompt
 # ======
