@@ -12,12 +12,13 @@ const readJSON = filename => {
   try {
     return JSON.parse(fs.readFileSync(filename, 'utf8'));
   } catch (x) {
+    console.error(`failed to parse ${filename}`);
     return null;
   }
 };
 
 // Alphabetize an object by its keys. Only works because of how V8 manages objects!
-const alphabetize = obj => {
+const alphabetize = (obj) => {
   var result = {};
   Object.keys(obj).sort().forEach(key => result[key] = obj[key]);
   return result;
@@ -36,7 +37,9 @@ cp.spawn('mkdir', ['-p', dir]).on('close', code => {
   console.log(`Wrote Sublime preferences to ${prefs}`);
 
   // Package Control preferences are not merged or anything. Blindly updated.
-  writeJSON(pkgctrl, readJSON(here('packages.json')));
+  const packages = readJSON(here('packages.json'));
+
+  writeJSON(pkgctrl, packages);
   console.log(`Wrote Package Control preferences to ${pkgctrl}`);
   console.log('Restart Sublime Text if it is running!');
 });
